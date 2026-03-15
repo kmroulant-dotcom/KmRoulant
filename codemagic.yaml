@@ -5,7 +5,7 @@ workflows:
     instance_type: mac_mini_m2
 
     integrations:
-      app_store_connect: 5TBLMRU26W
+      app_store_connect: AppStoreKey
 
     environment:
       xcode: latest
