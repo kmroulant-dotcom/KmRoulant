@@ -32,7 +32,7 @@ workflows:
         script: |
           xcode-project use-profiles
 
-        - name: Create Symlinks to Header Folders
+      - name: Create Symlinks to Header Folders
         script: |
           mkdir -p $HOME/Library/Developer/Xcode/DerivedData
           ln -s $CM_BUILD_DIR/ios/ReactKmRoulant/Headers $HOME/Library/Developer/Xcode/DerivedData
