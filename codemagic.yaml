@@ -10,9 +10,10 @@ workflows:
     environment:
       xcode: latest
       cocoapods: default
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.kmroulant.KmRoulant
+      #corrige le bug "No matching profiles found for bundle identifier"
+      #ios_signing:
+       # distribution_type: app_store
+        #bundle_identifier: com.kmroulant.KmRoulant
       vars:
         XCODE_PROJECT: "ReactKmRoulant.xcodeproj"
         XCODE_SCHEME: "ReactKmRoulant"
