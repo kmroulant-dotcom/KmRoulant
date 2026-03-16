@@ -27,6 +27,7 @@ workflows:
         script: |
           cd ios
           rm -rf Pods Podfile.lock
+          pod deintegrate
           pod install --repo-update
 
       - name: Set up code signing
