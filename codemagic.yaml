@@ -35,9 +35,9 @@ workflows:
       - name: Build IPA
         script: |
           xcode-project build-ipa \
-        #--project "$CM_BUILD_DIR/$XCODE_PROJECT" \
             --workspace "$CM_BUILD_DIR/ios/ReactKmRoulant.xcworkspace" \
             --scheme "$XCODE_SCHEME"
+        #--project "$CM_BUILD_DIR/$XCODE_PROJECT" \
 
     artifacts:
       - build/ios/ipa/*.ipa
