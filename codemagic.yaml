@@ -22,7 +22,6 @@ workflows:
       - name: Install dependencies
         script: |
           npm ci
-          npm run build
 
       - name: Set up code signing
         script: |
