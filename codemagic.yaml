@@ -15,13 +15,18 @@ workflows:
        # distribution_type: app_store
         #bundle_identifier: com.kmroulant.KmRoulant
       vars:
-        XCODE_PROJECT: "ios/ReactKmRoulant.xcodeproj"
+        #XCODE_PROJECT: "ios/ReactKmRoulant.xcodeproj"
         XCODE_SCHEME: "ReactKmRoulant"
 
     scripts:
       - name: Install dependencies
         script: |
           npm ci
+        #new:
+      - name: Install CocoaPods
+        script: |
+          cd ios
+          pod install
 
       - name: Set up code signing
         script: |
@@ -30,14 +35,15 @@ workflows:
       - name: Build IPA
         script: |
           xcode-project build-ipa \
-            --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
+        #--project "$CM_BUILD_DIR/$XCODE_PROJECT" \
+            --workspace "$CM_BUILD_DIR/ios/ReactKmRoulant.xcworkspace" \
             --scheme "$XCODE_SCHEME"
 
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+      #- $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      #- $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
 
     publishing:
       app_store_connect:
