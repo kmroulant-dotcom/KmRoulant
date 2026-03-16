@@ -15,7 +15,7 @@ workflows:
        # distribution_type: app_store
         #bundle_identifier: com.kmroulant.KmRoulant
       vars:
-        XCODE_PROJECT: "ReactKmRoulant.xcodeproj"
+        XCODE_PROJECT: "ios/ReactKmRoulant.xcodeproj"
         XCODE_SCHEME: "ReactKmRoulant"
 
     scripts:
