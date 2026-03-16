@@ -36,8 +36,6 @@ workflows:
         script: |
           mkdir -p $HOME/Library/Developer/Xcode/DerivedData
           ln -s $CM_BUILD_DIR/ios/ReactKmRoulant/Headers $HOME/Library/Developer/Xcode/DerivedData
-        outputs:
-          - $HOME/Library/Developer/Xcode/DerivedData/*.h    
 
       - name: Build IPA
         script: |
